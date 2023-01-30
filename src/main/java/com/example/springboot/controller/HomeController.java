@@ -25,6 +25,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/react")
+    public String react() {
+        return "react";
+    }
+
     @PostMapping("/new-video")
     public String newVideo(@ModelAttribute Video newVideo) {
         this.videoService.create(newVideo);
