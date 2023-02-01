@@ -1,11 +1,14 @@
 package com.example.springboot.service;
 
+import com.example.springboot.dto.UniversalSearch;
 import com.example.springboot.dto.Video;
 import com.example.springboot.dto.VideoSearch;
 import com.example.springboot.entity.VideoEntity;
 import com.example.springboot.repository.VideoRepository;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -59,6 +62,20 @@ public class VideoService {
             }
         }
         return Collections.emptyList();
+    }
+
+    public List<VideoEntity> search(UniversalSearch universalSearch) {
+        final VideoEntity probe = new VideoEntity();
+        final String value = universalSearch.value();
+        if (StringUtils.isNotBlank(value)) {
+            probe.setName(value);
+            probe.setDescription(value);
+        }
+        final Example<VideoEntity> example = Example.of(probe,
+                ExampleMatcher.matchingAny()
+                        .withIgnoreCase()
+                        .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
+        return this.videoRepository.findAll(example);
     }
 
 }

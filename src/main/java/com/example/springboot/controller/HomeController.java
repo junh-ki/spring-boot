@@ -1,5 +1,6 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.dto.UniversalSearch;
 import com.example.springboot.dto.Video;
 import com.example.springboot.dto.VideoSearch;
 import com.example.springboot.entity.VideoEntity;
@@ -43,6 +44,13 @@ public class HomeController {
     @PostMapping("/multi-field-search")
     public String multiFieldSearch(@ModelAttribute VideoSearch videoSearch, Model model) {
         final List<VideoEntity> videos = this.videoService.search(videoSearch);
+        model.addAttribute("videos", videos);
+        return "index";
+    }
+
+    @PostMapping("/universal-search")
+    public String universalSearch(@ModelAttribute UniversalSearch universalSearch, Model model) {
+        final List<VideoEntity> videos = this.videoService.search(universalSearch);
         model.addAttribute("videos", videos);
         return "index";
     }
