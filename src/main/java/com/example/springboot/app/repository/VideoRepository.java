@@ -1,6 +1,6 @@
-package com.example.springboot.repository;
+package com.example.springboot.app.repository;
 
-import com.example.springboot.entity.VideoEntity;
+import com.example.springboot.app.entity.VideoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

@@ -1,10 +1,10 @@
-package com.example.springboot.service;
+package com.example.springboot.app.service;
 
-import com.example.springboot.dto.UniversalSearch;
-import com.example.springboot.dto.Video;
-import com.example.springboot.dto.VideoSearch;
-import com.example.springboot.entity.VideoEntity;
-import com.example.springboot.repository.VideoRepository;
+import com.example.springboot.app.dto.UniversalSearch;
+import com.example.springboot.app.dto.Video;
+import com.example.springboot.app.dto.VideoSearch;
+import com.example.springboot.app.entity.VideoEntity;
+import com.example.springboot.app.repository.VideoRepository;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;

@@ -1,10 +1,10 @@
-package com.example.springboot.controller;
+package com.example.springboot.app.controller;
 
-import com.example.springboot.dto.UniversalSearch;
-import com.example.springboot.dto.Video;
-import com.example.springboot.dto.VideoSearch;
-import com.example.springboot.entity.VideoEntity;
-import com.example.springboot.service.VideoService;
+import com.example.springboot.app.dto.Video;
+import com.example.springboot.app.dto.VideoSearch;
+import com.example.springboot.app.entity.VideoEntity;
+import com.example.springboot.app.dto.UniversalSearch;
+import com.example.springboot.app.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

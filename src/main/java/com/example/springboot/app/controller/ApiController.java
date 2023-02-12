@@ -1,7 +1,7 @@
-package com.example.springboot.controller;
+package com.example.springboot.app.controller;
 
-import com.example.springboot.dto.Video;
-import com.example.springboot.service.VideoService;
+import com.example.springboot.app.dto.Video;
+import com.example.springboot.app.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
